@@ -2,21 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sususuhang/github.io</id>
     <title>知识笔记</title>
-    <updated>2020-12-27T14:26:29.020Z</updated>
+    <updated>2020-12-28T00:56:34.361Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sususuhang/github.io"/>
     <link rel="self" href="https://sususuhang/github.io/atom.xml"/>
-    <subtitle>I want to learn Kongfu</subtitle>
+    <subtitle>祝你百事可爱</subtitle>
     <logo>https://sususuhang/github.io/images/avatar.png</logo>
     <icon>https://sususuhang/github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 知识笔记</rights>
     <entry>
-        <title type="html"><![CDATA[第一篇]]></title>
-        <id>https://sususuhang/github.io/post/di-yi-pian/</id>
-        <link href="https://sususuhang/github.io/post/di-yi-pian/">
+        <title type="html"><![CDATA[十大排序算法]]></title>
+        <id>https://sususuhang/github.io/post/shi-da-pai-xu-suan-fa/</id>
+        <link href="https://sususuhang/github.io/post/shi-da-pai-xu-suan-fa/">
         </link>
-        <updated>2020-12-27T14:19:53.000Z</updated>
-        <content type="html"><![CDATA[<p>这是第一篇文章</p>
+        <updated>2020-12-28T00:44:57.000Z</updated>
+        <content type="html"><![CDATA[<hr>
+<p>layout:article<br>
+title:算法-「排序」十大排序算法汇总<br>
+tags:leetcode</p>
+<h2 id="lang-zh-hanskey-algorithm_sortingpageview-truetoc-trueshow_subscribe-false">lang: zh-Hans<br>
+key: Algorithm_Sorting<br>
+pageview: true<br>
+toc: true<br>
+show_subscribe: false</h2>
+<p>##一.冒泡排序<br>
+####1.思想<br>
+<strong>将最 小/大 的数交换到待排序序列的最后面。</strong><br>
+冒泡排序顾名思义，就是数字像泡泡一样一点一点的冒上去，到达合适的位置。</p>
 ]]></content>
     </entry>
 </feed>
