@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sususuhang/github.io</id>
     <title>知识笔记</title>
-    <updated>2020-12-28T00:56:34.361Z</updated>
+    <updated>2020-12-28T01:35:25.252Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sususuhang/github.io"/>
     <link rel="self" href="https://sususuhang/github.io/atom.xml"/>
@@ -28,7 +28,59 @@ show_subscribe: false</h2>
 <p>##一.冒泡排序<br>
 ####1.思想<br>
 <strong>将最 小/大 的数交换到待排序序列的最后面。</strong><br>
-冒泡排序顾名思义，就是数字像泡泡一样一点一点的冒上去，到达合适的位置。</p>
+冒泡排序顾名思义，就是数字像泡泡一样一点一点的冒上去，到达合适的位置。<br>
+####2.步骤<br>
+从前往后遍历数组，将相邻的两个数两两比较，较大(小)的放到后面，这样每一轮会有一个数被放到合适的位置，下一轮需要比较的数字相比于上一轮就会减少一个，因为已经有一个数字被放到了合适的位置。<br>
+<img src="https://sususuhang/github.io/post-images/1609117209366.png" alt="" loading="lazy"><br>
+算法图示<br>
+####3.代码<br>
+'''java<br>
+package com.suhang.sort;<br>
+public class bubble_Sort&lt;T extends Comparable<T>&gt;   extends Sort<T>{<br>
+@Override<br>
+public void sort(T[] nums){<br>
+for(int j=0;j&lt;nums.length-1;j++){//外层循环控制需要进行多少次，N个数需要进行N-1轮<br>
+for(int i=0;i&lt;nums.length-j-1;i++){ 没进行一轮就有一个数被放到了合适的位置，下一轮就可以少比较一次，进行了j轮，则还需要比较N-j-1次<br>
+if(nums[i+1]&gt;nums[i]) {<br>
+swap(nums[i+1],nums[i]);<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+'''<br>
+<strong>上述的排序算法还可以改进</strong><br>
+对于某些数列，进行到一定程度时，已经变成有序的了。这时候就可以提前结束比较。比如以 5,8,6,3,9,2,1,7 为例，当执行到第六、第七、第八轮的时候，数列的状态其实已经变为有序的了。123456789，因此第七轮，第八轮就没必要执行了。因此可以加入一个标志位，一开始flag=0，只要发生了交换则证明还是无序的则设置为1。<br>
+'''java<br>
+class bubble_Sort_Better&lt;T extends Comparable<T>&gt; extends Sort<T> {<br>
+@Override<br>
+public void sort(T[] nums) {<br>
+int flag=0;<br>
+int len=nums.length;<br>
+int temp=0;<br>
+for(int j=len-1;j&gt;0;j--){//控制进行多少轮冒泡，N个数要进行N-1轮<br>
+for(int i=0;i&lt;j;i++){//第j轮冒泡需要N-j-1次比较交换,即下一轮相比上一轮可以少比较一个数，因为每一轮过后 最后已经有一个数到了应该在的位置<br>
+if(less(nums[i+1],nums[i])){//如果i+1大于i，则交换<br>
+swap(nums,i+1,i);<br>
+flag=1;//有交换 则是无序的<br>
+}<br>
+}<br>
+}<br>
+if (flag==0) return;<br>
+}<br>
+}<br>
+'''<br>
+####4.分析<br>
+（1）时间复杂度<br>
+由于N个数 需要进行N-1轮冒泡，第j轮冒泡又需要N-j-1次比较交换，所以算法的时间复杂度为O(N^2)<br>
+（2）空间复杂度<br>
+未借助其它辅助空间，O(1)。<br>
+（3）稳定性<br>
+这里首先解释一下什么是稳定性：假设有两个相同大小的数，排序后能否维持<strong>排序前的相对顺序不变</strong>呢？若能维持，则说明是稳定的排序。<br>
+比如这里假设排序：5，8，5，2，9，第一次选择排序后第一个 5 与 2 交换，变为：2，8，5，5，9，第一个 5 交换到了另一个 5 的后边，两者的顺序相比较于排序前发生了变化。这样的就不是稳定的排序算法。</p>
+<p>对于冒泡排序算法，每次只会和相邻的大小不一样的交换，相同大小的数，原本在前面，不可能「冒」到另一个后面。</p>
+<p>所以，<strong>冒泡排序是一种稳定的排序方法</strong>。</p>
+<p>##二.选择排序</p>
 ]]></content>
     </entry>
 </feed>
