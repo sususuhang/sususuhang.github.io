@@ -1,30 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://sususuhang/github.io</id>
+    <id>https://sususuhang.github.io</id>
     <title>知识笔记</title>
-    <updated>2020-12-29T01:24:13.492Z</updated>
+    <updated>2020-12-29T03:12:12.561Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://sususuhang/github.io"/>
-    <link rel="self" href="https://sususuhang/github.io/atom.xml"/>
+    <link rel="alternate" href="https://sususuhang.github.io"/>
+    <link rel="self" href="https://sususuhang.github.io/atom.xml"/>
     <subtitle>祝你百事可爱</subtitle>
-    <logo>https://sususuhang/github.io/images/avatar.png</logo>
-    <icon>https://sususuhang/github.io/favicon.ico</icon>
+    <logo>https://sususuhang.github.io/images/avatar.png</logo>
+    <icon>https://sususuhang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 知识笔记</rights>
     <entry>
         <title type="html"><![CDATA[Java IO]]></title>
-        <id>https://sususuhang/github.io/post/java-io/</id>
-        <link href="https://sususuhang/github.io/post/java-io/">
+        <id>https://sususuhang.github.io/post/java-io/</id>
+        <link href="https://sususuhang.github.io/post/java-io/">
         </link>
         <updated>2020-12-29T01:22:21.000Z</updated>
         <content type="html"><![CDATA[<h2 id="一-序列化">一、序列化</h2>
 <h4 id="1-定义">1、定义</h4>
-<p>把对象以流的形式，写入到文件中，叫做写对象，也叫做对象的序列化。</p>
+<p>把对象以流的形式，写入到文件中，叫做写对象，也叫做对象的序列化。<br>
+把文件中保存的对象以流的方式读取出来，叫做读对象，也叫做对象的反序列化。</p>
+<h4 id="2-方式">2、方式</h4>
+<p><strong>首先类要实现序列化接口，标记该类可以进行序列化</strong><br>
+（1）写到文件中：ObjectOutputStream,对象中包含的不仅仅是字符，所以使用字节流，<br>
+-1.创建对象：ObjectOutputStream oos=ObjectOutputStream(new                         FileOutputStream (&quot;Filename&quot;));  创建写入指定OutputStream（字节输出流)<br>
+-2.使用writeObject写对象：oos.writeObject(OBJ);<br>
+-3.释放资源 oos.close();<br>
+<strong>Note:</strong><br>
+-1.序列化时类中所有的成员变量必须都是可序列化的.比如若对Person类进行序列化，而                Person 类中的成员变量有Father对象，而Father对象有未实现序列化接口，则                  Person类中就含有不可序列化对象,Person对象不能被序列化<br>
+-2.被static修饰的成员变量不能被序列化，但是对象整体可以被序列化，比如Person类含有           成员static int age，则序列化再反序列化读出来的Person对象中age=0，该静态变量             不能被序列化<br>
+（2）从文件中读取：ObjectInputStream，对象中保存的都是字节，所有使用字节流。<br>
+-1创建对象：ObjectInputStream ois=ObjectIputnStream(new                           FileInputStream(&quot;Filename&quot;)) ;创建指定ObjectInputStream（字节输入流)<br>
+-2.使用writeObject写对象：Object o=oos.readObject(OBJ);<br>
+-3.释放资源 ois.close();<br>
+<strong>Note:</strong><br>
+1.类必须是可序列化的，<br>
+2.必须存在对应的class文件，否则会有classNotFoundException</p>
+<h4 id="3transient瞬态关键字">3.transient:瞬态关键字</h4>
+<pre><code>    被transient修饰的成员变量不能被序列化（即不能被持久化和恢复），transient 只能修          饰变量，不能修饰类和⽅法。
+</code></pre>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[知识栈目录]]></title>
-        <id>https://sususuhang/github.io/post/zhi-shi-zhan-mu-lu/</id>
-        <link href="https://sususuhang/github.io/post/zhi-shi-zhan-mu-lu/">
+        <id>https://sususuhang.github.io/post/zhi-shi-zhan-mu-lu/</id>
+        <link href="https://sususuhang.github.io/post/zhi-shi-zhan-mu-lu/">
         </link>
         <updated>2020-12-28T01:43:37.000Z</updated>
         <content type="html"><![CDATA[<h3 id="一-算法与刷题">一、算法与刷题</h3>
@@ -33,8 +53,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[十大排序算法]]></title>
-        <id>https://sususuhang/github.io/post/shi-da-pai-xu-suan-fa/</id>
-        <link href="https://sususuhang/github.io/post/shi-da-pai-xu-suan-fa/">
+        <id>https://sususuhang.github.io/post/shi-da-pai-xu-suan-fa/</id>
+        <link href="https://sususuhang.github.io/post/shi-da-pai-xu-suan-fa/">
         </link>
         <updated>2020-12-28T00:44:57.000Z</updated>
         <content type="html"><![CDATA[<hr>
@@ -52,7 +72,7 @@ show_subscribe: false</h2>
 冒泡排序顾名思义，就是数字像泡泡一样一点一点的冒上去，到达合适的位置。<br>
 ####2.步骤<br>
 从前往后遍历数组，将相邻的两个数两两比较，较大(小)的放到后面，这样每一轮会有一个数被放到合适的位置，下一轮需要比较的数字相比于上一轮就会减少一个，因为已经有一个数字被放到了合适的位置。<br>
-<img src="https://sususuhang/github.io/post-images/1609117209366.png" alt="" loading="lazy"><br>
+<img src="https://sususuhang.github.io/post-images/1609117209366.png" alt="" loading="lazy"><br>
 算法图示<br>
 ####3.代码<br>
 '''java<br>

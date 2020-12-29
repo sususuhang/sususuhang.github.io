@@ -7,12 +7,12 @@
 <meta name="description" content="祝你百事可爱">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://sususuhang/github.io/favicon.ico?v=1609205050337">
+<link rel="shortcut icon" href="https://sususuhang.github.io/favicon.ico?v=1609211530435">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://sususuhang/github.io/styles/main.css">
+<link rel="stylesheet" href="https://sususuhang.github.io/styles/main.css">
 
 
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -26,7 +26,7 @@
   
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
-    <h3><a href="https://sususuhang/github.io">知识笔记</a></h3>
+    <h3><a href="https://sususuhang.github.io">知识笔记</a></h3>
   </div>
   <div class="collapsible">
     <input id="collapsible1" type="checkbox" name="collapsible1">
@@ -90,7 +90,27 @@
             <div class="post-content">
               <h2 id="一-序列化">一、序列化</h2>
 <h4 id="1-定义">1、定义</h4>
-<p>把对象以流的形式，写入到文件中，叫做写对象，也叫做对象的序列化。</p>
+<p>把对象以流的形式，写入到文件中，叫做写对象，也叫做对象的序列化。<br>
+把文件中保存的对象以流的方式读取出来，叫做读对象，也叫做对象的反序列化。</p>
+<h4 id="2-方式">2、方式</h4>
+<p><strong>首先类要实现序列化接口，标记该类可以进行序列化</strong><br>
+（1）写到文件中：ObjectOutputStream,对象中包含的不仅仅是字符，所以使用字节流，<br>
+-1.创建对象：ObjectOutputStream oos=ObjectOutputStream(new                         FileOutputStream (&quot;Filename&quot;));  创建写入指定OutputStream（字节输出流)<br>
+-2.使用writeObject写对象：oos.writeObject(OBJ);<br>
+-3.释放资源 oos.close();<br>
+<strong>Note:</strong><br>
+-1.序列化时类中所有的成员变量必须都是可序列化的.比如若对Person类进行序列化，而                Person 类中的成员变量有Father对象，而Father对象有未实现序列化接口，则                  Person类中就含有不可序列化对象,Person对象不能被序列化<br>
+-2.被static修饰的成员变量不能被序列化，但是对象整体可以被序列化，比如Person类含有           成员static int age，则序列化再反序列化读出来的Person对象中age=0，该静态变量             不能被序列化<br>
+（2）从文件中读取：ObjectInputStream，对象中保存的都是字节，所有使用字节流。<br>
+-1创建对象：ObjectInputStream ois=ObjectIputnStream(new                           FileInputStream(&quot;Filename&quot;)) ;创建指定ObjectInputStream（字节输入流)<br>
+-2.使用writeObject写对象：Object o=oos.readObject(OBJ);<br>
+-3.释放资源 ois.close();<br>
+<strong>Note:</strong><br>
+1.类必须是可序列化的，<br>
+2.必须存在对应的class文件，否则会有classNotFoundException</p>
+<h4 id="3transient瞬态关键字">3.transient:瞬态关键字</h4>
+<pre><code>    被transient修饰的成员变量不能被序列化（即不能被持久化和恢复），transient 只能修          饰变量，不能修饰类和⽅法。
+</code></pre>
 
             </div>
           </article>
@@ -101,7 +121,7 @@
               <div class="next">
                 下一篇
               </div>
-              <a href="https://sususuhang/github.io/post/zhi-shi-zhan-mu-lu/">
+              <a href="https://sususuhang.github.io/post/zhi-shi-zhan-mu-lu/">
                 <h3 class="post-title">
                   知识栈目录
                 </h3>
@@ -114,7 +134,7 @@
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://sususuhang/github.io/images/avatar.png?v=1609205050337" class="no-responsive avatar">
+    <img src="https://sususuhang.github.io/images/avatar.png?v=1609211530435" class="no-responsive avatar">
     <div class="text-muted">祝你百事可爱</div>
     <div class="social-container">
       
@@ -139,19 +159,19 @@
         
           
             <li>
-              <a href="https://sususuhang/github.io/post/java-io/">Java IO</a>
+              <a href="https://sususuhang.github.io/post/java-io/">Java IO</a>
             </li>
           
         
           
             <li>
-              <a href="https://sususuhang/github.io/post/zhi-shi-zhan-mu-lu/">知识栈目录</a>
+              <a href="https://sususuhang.github.io/post/zhi-shi-zhan-mu-lu/">知识栈目录</a>
             </li>
           
         
           
             <li>
-              <a href="https://sususuhang/github.io/post/shi-da-pai-xu-suan-fa/">十大排序算法</a>
+              <a href="https://sususuhang.github.io/post/shi-da-pai-xu-suan-fa/">十大排序算法</a>
             </li>
           
         
@@ -167,7 +187,7 @@
     </div>
   </div>
   <div class="paper">
-     | <a class="rss" href="https://sususuhang/github.io/atom.xml" target="_blank">RSS</a>
+     | <a class="rss" href="https://sususuhang.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
 
