@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sususuhang/github.io</id>
     <title>知识笔记</title>
-    <updated>2020-12-28T01:58:38.929Z</updated>
+    <updated>2020-12-29T01:24:13.492Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sususuhang/github.io"/>
     <link rel="self" href="https://sususuhang/github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://sususuhang/github.io/images/avatar.png</logo>
     <icon>https://sususuhang/github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 知识笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[Java IO]]></title>
+        <id>https://sususuhang/github.io/post/java-io/</id>
+        <link href="https://sususuhang/github.io/post/java-io/">
+        </link>
+        <updated>2020-12-29T01:22:21.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="一-序列化">一、序列化</h2>
+<h4 id="1-定义">1、定义</h4>
+<p>把对象以流的形式，写入到文件中，叫做写对象，也叫做对象的序列化。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[知识栈目录]]></title>
         <id>https://sususuhang/github.io/post/zhi-shi-zhan-mu-lu/</id>
